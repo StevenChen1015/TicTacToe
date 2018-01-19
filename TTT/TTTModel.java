@@ -35,23 +35,15 @@ public class TTTModel implements Cloneable {
 		this.win = other.win;
 		this.winner = other.winner;
 
-		this.readyForNextRound = Arrays.copyOf(
-			other.readyForNextRound, other.readyForNextRound.length);
+		this.readyForNextRound = Arrays.copyOf(other.readyForNextRound, other.readyForNextRound.length);
 	}
 
 	public String toString() {
-		return new StringBuilder()
-			.append(this.getClass().getName())
-			.append(":{")
-			.append(" score:").append(Arrays.toString(score))
-			.append(" board:").append(Arrays.toString(board))
-			.append(" movesfirst:").append(movesFirst)
-			.append(" whosMove:").append(whosMove)
-			.append(" win:").append(win)
-			.append(" winner:").append(winner)
-			.append(" readyForNextRound:").append(Arrays.toString(readyForNextRound))
-			.append(" }")
-			.toString();
+		return new StringBuilder().append(this.getClass().getName()).append(":{").append(" score:")
+				.append(Arrays.toString(score)).append(" board:").append(Arrays.toString(board)).append(" movesfirst:")
+				.append(movesFirst).append(" whosMove:").append(whosMove).append(" win:").append(win).append(" winner:")
+				.append(winner).append(" readyForNextRound:").append(Arrays.toString(readyForNextRound)).append(" }")
+				.toString();
 	}
 
 	public TTTModel clone() {
@@ -63,24 +55,12 @@ public class TTTModel implements Cloneable {
 	}
 
 	private boolean equals(TTTModel o) {
-		return (this == o)
-			|| (Arrays.equals(this.score, o.score)
-			&& Arrays.equals(this.board, o.board)
-			&& this.movesFirst == o.movesFirst
-			&& this.whosMove == o.whosMove
-			&& this.win == o.win
-			&& this.winner == o.winner
-			&& Arrays.equals(this.readyForNextRound, o.readyForNextRound));
+		return (this == o) || (Arrays.equals(this.score, o.score) && Arrays.equals(this.board, o.board)
+				&& this.movesFirst == o.movesFirst && this.whosMove == o.whosMove && this.win == o.win
+				&& this.winner == o.winner && Arrays.equals(this.readyForNextRound, o.readyForNextRound));
 	}
 
 	public int hashCode() {
-		return Objects.hash(
-			score,
-			board,
-			movesFirst,
-			whosMove,
-			win,
-			winner,
-			readyForNextRound);
+		return Objects.hash(score, board, movesFirst, whosMove, win, winner, readyForNextRound);
 	}
 }
